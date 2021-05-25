@@ -1,23 +1,6 @@
-<head>
-	{% load static %}
-	<!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-</head>  
+{% extends "main/header.html" %}
 
-<body>
-
-  <nav>
-    <div class="nav-wrapper">
-      <a href="/" class="brand-logo"><b>Jai Enterprises</b></a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="/">Home</a></li>
-        <li><a href="/register">Register</a></li>
-        <li><a href="/login">Login</a></li>
-      </ul>
-    </div>
-  </nav>
+{% block content %}
 
   <div class="row">
 	{% for i in items %}
@@ -38,4 +21,4 @@
 
 
 
-</body>
+{% endblock %}
