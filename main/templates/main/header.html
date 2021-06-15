@@ -4,59 +4,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
 </head>  
 
 <body>
 
-  <!-- Dropdown Structure -->
-  <ul id="dropdown1" class="dropdown-content">
-    <li><a href="#!">one</a></li>
-    <li><a href="#!">two</a></li>
-    <li class="divider"></li>
-    <li><a href="#!">three</a></li>
-  </ul>
-  <nav>
-    <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">Jai Enterprises</a>
-      <ul class="right hide-on-med-and-down">
-        <!-- Dropdown Trigger -->
-        <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Products<i class="material-icons right">arrow_drop_down</i></a></li>
-        <li><a href="#!">Career</a></li>
-        <li><a href="/register">Register</a></li>
-        <li><a href="/login">Login</a></li>
-      </ul>
-    </div>
-  </nav>
+  {% include "main/includes/navbar.html" %}
+
+  {% include "main/includes/messages.html" %}
 
   <div class = "container">
     <br>
-   {% block content %}
-   {% endblock %}
+    {% block content %}
+    {% endblock %}
   </div>
 
- <footer class="page-footer">
-  <div class="container">
-    <div class="row">
-      <div class="col l6 s12">
-        <h4 class="white-text">Jai Enterprises</h4>
-        <p class="grey-text text-lighten-4">~~SLOGAN~~</p>
-      </div>
-      <div class="col l4 offset-l2 s12">
-        <h5 class="white-text">Links</h5>
-        <ul>
-          <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-          <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-          <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-          <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="footer-copyright">
-    <div class="container">
-    © 2021 Copyright Text
-    </div>
-  </div>
-</footer>
+  {% include "main/includes/footer.html" %}
 
 </body>
