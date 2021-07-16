@@ -23,12 +23,18 @@ class ItemSeries(models.Model):
 	def __str__(self):
 		return self.item_series	
 
+def upload_location(instance, filename):
+    filebase, extension = filename.split('.')
+    return 'item_image/%s.%s' % (instance.item_name, extension)
 
 class Item(models.Model):
+
 	item_name = models.CharField(max_length = 200)
 	item_discription = models.TextField()
 	item_update = models.DateTimeField("Last Updated", default = datetime.now(), blank=True, null=True)						   
-									   
+	temp = "item_image/"+str(item_name)+".jpg"
+	item_img = models.ImageField(upload_to=upload_location, blank=True, null=True)	
+
 	item_series = models.ForeignKey(ItemSeries, verbose_name= "Series", default=1,  on_delete=models.SET_DEFAULT)
 	item_slug = models.CharField(max_length=200, default=1)
 

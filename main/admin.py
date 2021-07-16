@@ -7,7 +7,8 @@ class ItemAdmin(admin.ModelAdmin):
 		("Title/date", {"fields": ["item_name", "item_update"]}),
 		("URL", {"fields": ["item_slug"]}),
 		("Series", {"fields": ["item_series"]}),
-		("Content", {"fields": ["item_discription"]})
+		("Content", {"fields": ["item_discription"]}),
+		("Image", {"fields": ["item_img"]})
 	]
 
 

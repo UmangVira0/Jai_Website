@@ -1,24 +1,34 @@
-<head>
-	{% load static %}
-	<!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
-</head>  
+<<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="utf-8">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    
+   
+  </head>  
 
-<body>
+  <body>
 
-  {% include "main/includes/navbar.html" %}
+    {% include "main/includes/navbar.html" %}
 
-  {% include "main/includes/messages.html" %}
+    {% include "main/includes/messages.html" %}
+    
+    <main>
+      <div style="background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwallpapersafari.com%2Fw%2FcU6JWo&psig=AOvVaw1eBAulQvnXOrIK1yQueVX5&ust=1623841457736000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCPje9_--mfECFQAAAAAdAAAAABAD')">
+        <div class = "container">
+          <br>
+          {% block content %}
+          {% endblock %}
+        </div>
+      </div>  
+    </main>
 
-  <div class = "container">
-    <br>
-    {% block content %}
-    {% endblock %}
-  </div>
+    {% include "main/includes/footer.html" %}
 
-  {% include "main/includes/footer.html" %}
-
-</body>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+  </body>
+</html>

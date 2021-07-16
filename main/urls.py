@@ -15,6 +15,9 @@ Including another URLconf
 """
 from django.urls import path
 from . import views
+from django.conf import settings
+from django.conf.urls.static import static
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 app_name = "main"
 
@@ -24,4 +27,8 @@ urlpatterns = [
     path("logout/", views.logout_request, name = "logout"),
     path("login/", views.login_request, name = "login"),
     path("<single_slug>", views.single_slug, name="single_slug"),
-]
+] + static(settings.STATIC_URL,
+           document_root=settings.STATIC_ROOT)
+
+
+urlpatterns += staticfiles_urlpatterns()
